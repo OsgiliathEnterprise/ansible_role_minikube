@@ -1,7 +1,7 @@
 Ansible Role: Minikube
 ======================
 
-[![Build Status](https://travis-ci.com/gantsign/ansible_role_minikube.svg?branch=master)](https://travis-ci.com/gantsign/ansible_role_minikube)
+[![Tests](https://github.com/gantsign/ansible_role_minikube/workflows/Tests/badge.svg)](https://github.com/gantsign/ansible_role_minikube/actions?query=workflow%3ATests)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.minikube-blue.svg)](https://galaxy.ansible.com/gantsign/minikube)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible_role_minikube/master/LICENSE)
 
@@ -11,7 +11,7 @@ the tool for running Kubernetes locally.
 Requirements
 ------------
 
-* Ansible >= 2.7
+* Ansible >= 2.8
 
 * Linux Distribution
 
@@ -55,7 +55,11 @@ are shown below):
 
 ```yaml
 # Minikube version number
-minikube_version: '1.9.2'```
+minikube_version: '1.15.1'
+
+# Directory to store files downloaded for Minikube
+minikube_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"
+```
 
 Example Playbook
 ----------------
