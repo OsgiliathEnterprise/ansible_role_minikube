@@ -1,6 +1,6 @@
 ---
 
-- name: ansible_role_minikube | create local temporary directory
+- name: minikube | create local temporary directory
   tempfile:
     state: directory
     suffix: binary
